@@ -5,28 +5,23 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Login() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     try {
-    //       const result = await signIn("credentials", {
-    //         email,
-    //         password,
-    //         redirect: false,
-    //       });
-    //       if (result?.error) {
-    //         setError("Invalid credentials");
-    //         return;
-    //       }
-    //       router.push("/dashboard");
-    //     } catch (error) {
-    //       setError("An error occurred during login");
-    //     }
-  };
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   //     e.preventDefault();
+  //   //     try {
+  //   //       const result = await signIn("credentials", {
+  //   //         email,
+  //   //         password,
+  //   //         redirect: false,
+  //   //       });
+  //   //       if (result?.error) {
+  //   //         setError("Invalid credentials");
+  //   //         return;
+  //   //       }
+  //   //       router.push("/dashboard");
+  //   //     } catch (error) {
+  //   //       setError("An error occurred during login");
+  //   //     }
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -36,10 +31,10 @@ export default function Login() {
             Faça login para acessar sua conta
           </h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          {error && (
+        <form className="mt-8 space-y-6" onSubmit={() => {}}>
+          {/* {error && (
             <div className="text-red-500 text-center text-sm">{error}</div>
-          )}
+          )} */}
           <div className="rounded-md shadow-sm space-y-4">
             <div>
               <label htmlFor="email" className="sr-only">
@@ -52,7 +47,7 @@ export default function Login() {
                 required
                 className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Endereço de e-mail"
-                value={email}
+                // value={email}
                 // onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -67,7 +62,7 @@ export default function Login() {
                 required
                 className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Senha"
-                value={password}
+                // value={password}
                 // onChange={(e) => setPassword(e.target.value)}
               />
             </div>
