@@ -20,10 +20,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function DashboardAdvogados() {
-  const [selectedClient, setSelectedClient] = useState(null);
+  const [selectedClient, setSelectedClient] = useState<Cliente>();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [clientes] = useState([
+  interface Cliente {
+    id: number;
+    nome: string;
+    email: string;
+    telefone: string;
+    caso: string;
+    status: string;
+    dataCadastro: string;
+    descricao: string;
+  }
+
+  const [clientes] = useState<Cliente[]>([
     {
       id: 1,
       nome: "Maria Silva",
@@ -76,7 +87,7 @@ export default function DashboardAdvogados() {
     },
   ]);
 
-  const handleOpenModal = (cliente) => {
+  const handleOpenModal = (cliente: Cliente) => {
     setSelectedClient(cliente);
     setIsModalOpen(true);
   };
