@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Cadastro() {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
